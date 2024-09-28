@@ -75,3 +75,6 @@ create table if not exists student04.user_book (
     primary key (book_id, user_id)
     );
 
+create table if not exists student04.book_small partition of student04.book for values from (0) TO (1000);
+create table if not exists student04.book_medium partition of student04.book for values from (1000) TO (10000);
+create table if not exists student04.book_big partition of student04.book for values from (10000) to (maxvalue);
